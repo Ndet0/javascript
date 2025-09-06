@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+function myFunction() {
+  document.getElementById("demt").innerHTML = "Paragraph changed.";
+}
+</script>
+    </head>
+<body>
+
+<h2>My First JavaScript</h2>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+<br/>
+<p id="dem">JavaScript can change HTML content.</p>
+
+<button type="button" onclick='document.getElementById("dem").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+<br/>
+<br/>
+<p>JavaScript can change HTML attribute values.</p>
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+<br/>
+<br/>
+
+<p id="dems">JavaScript can hide HTML elements.</p>
+
+<button type="button" onclick="document.getElementById('dems').style.display='none'">Click Me!</button>
+<button type="button" onclick="document.getElementById('dems').style.display='flex'">Show</button>
+<br/>
+<br/>
+<p id="demz" style="display:none">Hello JavaScript!</p>
+
+<button type="button" onclick="document.getElementById('demz').style.display='block'">Click Me!</button>
+<br/>
+<br/>
+<p id="demt">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+<br/>
+<br/>
+<p id="demk">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="document.getElementById('demk').style.fontSize='35px'">Click Me!</button>
+<br/>
+<br/>
+<p id="demg">A Paragraph.</p>
+
+<button type="button" onclick="yourFunction()">Try it</button>
+<p>This example links to "myScript.js".</p>
+<p>(myFunction is stored in "myScript.js")</p>
+
+<script src="myScript.js"></script>
+<br/>
+<br/>
+
+<p>Never call document.write after the document has finished loading.
+It will overwrite the whole document.</p>
+
+<script>
+document.write(5 + 7);
+</script>
+<br/>
+<br/>
+<p>My First Paragraph.</p>
+
+<p id="demi"></p>
+
+<script>
+document.getElementById("demi").innerHTML = 5 + 6;
+</script>
+<br/>
+<br/>
+<p>My first paragraph.</p>
+
+<script>
+window.alert(5 + 6);
+</script>
+<br/>
+<br/>
+<p>F12 on your keyboard will activate debugging.</p>
+<p>Then select "Console" in the debugger menu.</p>
+<p>Then click Run again.</p>
+
+<script>
+console.log(5 + 7);
+</script>
+<br/>
+<br/>
+<p id="demv"></p>
+
+<script>
+var x, y, z;  // Declare 3 variables
+x = 5;    // Assign the value 5 to x
+y = 6;    // Assign the value 6 to y
+z = x + y;  // Assign the sum of x and y to z
+
+document.getElementById("demv").innerHTML =
+"The value of z is " + z + ".";
+</script>
+<br/>
+<br/>
+<h3>Number can be written with or without decimals.</h3>
+
+<p id="demx"></p>
+
+<script>
+document.getElementById("demx").innerHTML = 10.50;
+</script>
+<br/>
+<br/>
+
+<br/>
+<br/>
+<p id="demw"></p>
+
+<script>
+document.getElementById("demw").innerHTML = 5 * 10;
+</script>
+<br/>
+<br/>
+<h2>Expressions Compute to Values</h2>
+
+<p id="demy"></p>
+
+<script>
+document.getElementById("demy").innerHTML = "John" + " "  + "Doe";
+</script>
+<br/>
+<br/>
+<p id="deml"></p>
+
+<script>
+var x;
+x = 5;
+document.getElementById("deml").innerHTML = x * 10;
+</script>
+<h3>The let and const keywords create variables</h3>
+
+<p id="demj"></p>
+
+<script>
+let x = 5;
+const fname = "John";
+
+document.getElementById("demj").innerHTML = fname + " is " + x + " years old.";
+</script>
+</body>
+</html> 
