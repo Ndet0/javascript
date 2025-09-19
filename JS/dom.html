@@ -1,0 +1,62 @@
+/***Document Object Model (DOM) HTML
+    The DOM is a representaion of an html document made up of literal nodes and objects
+    
+    Key Concepts:
+    1.Nodes: Everything in an HTML document is a node. The most common types are element nodes, text nodes, and attribute nodes.
+    2.Tree Structure: The DOM represents the document as a hierarchical tree structure where each node is connected to its parent and child nodes.
+    3.Methods and Properties: The DOM provides various methods and properties to access and manipulate nodes.
+Moving Through the DOM:
+  Accessing Elements
+  Types of collections
+HTMLCollection
+ an array-like object of HTML elements
+ is iterable so works with for...of loop
+ can be converted to an array using Array.from() or spread operator [...collection]
+   1.getElementById()
+   2.getElementsByClassName()
+   3.getElementsByTagName()
+
+NodeList
+array like object of nodes
+is iterable so works with for...of loop
+can be converted to an array using Array.from() or spread operator [...collection]
+for each() method available
+   1.querySelector()
+   2.querySelectorAll()
+
+Methods to Access Elements
+    1.closest()
+    2.matches() 
+    3.contains()
+
+  Traversing the DOM:
+  DOM nodes are linked in a tree structure.
+Common properties for traversing:
+   (a)parentNode
+   (b)childNodes:
+       1.firstChild
+       2.lastChild
+   (c)nextSibling
+   (d)previousSibling
+
+  Modifying Elements
+   innerHTML
+   textContent
+   setAttribute()
+   removeAttribute()
+  Creating and Inserting Elements
+   createElement()
+   createTextNode()
+   appendChild()
+   insertBefore()
+  Removing Elements
+   removeChild()
+  Event Handling
+   addEventListener()
+   removeEventListener()
+  Common Use Cases
+   Changing Styles
+   Form Validation
+   Dynamic Content Updates
+   Event Delegation
+   ***/

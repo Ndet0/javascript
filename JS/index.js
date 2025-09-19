@@ -114,3 +114,133 @@ const hasExpensiveItems=items.every((item)=>{
  })
 
  console.log(hasExpensiveItems)
+
+ const demonSlayer = [
+    {
+        name: "Tanjiro Kamado",
+        gender: "Male",
+        powers: "Water Breathing, Hinokami Kagura",
+        age: 15
+    },
+    {
+        name: "Nezuko Kamado",
+        gender: "Female",
+        powers: "Demon Blood Art, Regeneration",
+        age: 14
+    },
+    {
+        name: "Zenitsu Agatsuma",
+        gender: "Male",
+        powers: "Thunder Breathing",
+        age: 16
+    },
+    {
+        name: "Inosuke Hashibira",
+        gender: "Male",
+        powers: "Fire Breathing",
+        age: 15
+    },
+    {
+        name: "Kanao Tsuyuri",
+        gender: "Female",
+        powers: "Wind Breathing",
+        age: 16
+    },
+    {
+        name: "Muzan Kibutsuji",
+        gender: "Male",
+        powers: "Demon Blood Art, Regeneration",
+        age: 1000
+    },
+    {
+        name: "Kokushibo",
+        gender: "Male",
+        powers: "Demon Blood Art, Regeneration",
+        age: 1000
+    }
+]
+
+const name=demonSlayer.map((demonSlayer)=>{
+  return demonSlayer.name
+})
+console.log(name)
+
+const filteredName=demonSlayer.filter((demonSlayer)=>{
+  return demonSlayer.gender
+})
+console.log(filteredName)
+
+
+
+// 1. Reverse an array without using reverse()
+function reverseArray(arr) {
+  const reversed = [];  // Creates an empty array to store the reversed elements
+  for (let i = arr.length - 1; i >= 0; i--) { //This loop goes through the array from the last element to the first, allowing you to process the array in reverse order.
+    reversed.push(arr[i]);  //Adds the current element to the reversed array
+  }
+  return reversed; //Return the new array with elements in reverse order
+}
+
+console.log(reverseArray([1, 2, 3])); // [3, 2, 1]
+
+
+// 2. Find the maximum number in an array
+function findMax(arr) {
+  if (arr.length === 0) return undefined; //If the array is empty, return undefined 
+  let max = arr[0];   // Assume the first element is the maximum to start
+  for (let num of arr) { // Loop through each element in the array
+    if (num > max) max = num;  // If the current element is greater than max, update max
+  }
+  return max;
+}
+
+console.log(findMax([5, 10, 3, 7])); // 10
+
+
+// 3. Remove duplicates from an array
+function removeDuplicates(arr) {
+  const uniqueElements = [];
+  for (let item of arr) {    //Loop through each element in the array
+    if (!uniqueElements.includes(item)) {   //If the element is not already in uniqueElements
+      uniqueElements.push(item);   //Add it to uniqueElements
+    }
+  }
+  return uniqueElements;
+}
+
+console.log(removeDuplicates([1, 2, 2, 3, 1])); // [1, 2, 3]
+
+
+// 4. Flatten a multi-dimensional array (one level deep)
+function flattenArray(arr) {
+  const flat = [];
+  for (let item of arr) {
+    if (Array.isArray(item)) {
+      for (let subItem of item) {
+        flat.push(subItem);
+      }
+    } else {
+      flat.push(item);
+    }
+  }
+  return flat;
+}
+
+// 5. Count occurrences of a value in an array
+function countOccurrences(arr, value) {
+  let count = 0;
+  for (let item of arr) {
+    if (item === value) count++;
+  }
+  return count;
+}
+
+
+
+
+
+
+
+//console.log(flattenArray([1, [2, 3], 4, [5]])); // [1, 2, 3, 4, 5]
+
+//console.log(countOccurrences([1, 2, 2, 3, 2], 2)); // 3

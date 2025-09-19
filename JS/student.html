@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+            padding:10px;
+            margin:20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+     
+    </style>
+</head>
+<body>
+    <h1>Student Grade Generator</h1>
+    <div class="container">
+        <p>Enter student marks (0-100):</p>
+        <input type="number" id="marks" min="0" max="100" placeholder="enter your grade">
+        <br>
+        <button onclick="calculateGrade()">Calculate Grade</button>
+        <div id="result"></div>
+    </div>
+  
+</body>
+  
+    <script>
+        //getting input elemets
+        //The function starts by selecting two HTML elements by their IDs 
+        function calculateGrade() {
+            const marksInput = document.getElementById('marks');
+            const resultDiv = document.getElementById('result');
+            
+            //The value entered in the input field is retrieved as a string therefore 'parseInt' converts this string into an integer
+            const marks = parseInt(marksInput.value);
+            
+            // Clear previous result
+            //before processing the new input, the function clears any previous content inside the result container
+
+            resultDiv.innerHTML = '';
+            resultDiv.classList.remove('error');
+            
+            // Validate input
+            //The function checks if the input is a valid number bbetween 0 and 100
+            //if the input is not a number('isNaN(marks)')or is less than 0,or greater than 100 it displays an error message asking the user to enter a valid
+            if (isNaN(marks) || marks < 0 || marks > 100) {
+                resultDiv.classList.add('error');
+                resultDiv.innerHTML = 'Please enter a valid mark between 0 and 100.';
+                return;
+            }
+            
+
+            let firstclass;
+            if(marks >= 95){
+                firstclass='Valevictorian';
+            }
+            // Determine grade
+            let grade;
+            if (marks > 79 && marks < 95) {
+                grade = 'A';
+            } else if (marks >= 60) {
+                grade = 'B';
+            } else if (marks >= 49) {
+                grade = 'C';
+            } else if (marks >= 40) {
+                grade = 'D';
+            } else {
+                grade = 'E';
+            }
+            
+            // Display result
+            // The innerHTML property allows you to change the HTML markup inside an element.
+            // The backticks indicate a template literal in JavaScript, which allows embedding expressions inside a string using ${...}.
+            //'${grade}': This is a placeholder inside the template literal that will be replaced by the value of the variable grade.
+
+
+            resultDiv.innerHTML = `Grade: ${grade}`;
+            resultDiv.innerHTML =`Grade: ${firstclass}`;
+        }
+    </script>
+</html>

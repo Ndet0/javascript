@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Governor</title>
+</head>
+<body>
+    <h1>Speed Governor </h1>
+    <p>Enter Speed</p>
+    <input type="number" id="speed" min="0" max="310" placeholder="e.g 70">
+    <br/>
+    <br/>
+    <button onclick="checkSpeed(speed)">Checkspeed</button>
+    <div id="result"></div>
+</body>
+<script>
+    function checkSpeed(speed) {
+    let speedLimit = 70;
+    const kmPerPoint = 5;
+    const resultDiv = document.getElementById('result');
+         
+    if (speed <= speedLimit) {
+        points:"Ok";
+        return;
+    }
+    // Calculate demerit points
+     speedLimit= parseInt(speedLimit.value);
+
+    
+     points = Math.floor((speed - speedLimit) / kmPerPoint);
+    if (points > 12) {
+        points:"License suspended";
+    } else(points{
+        points:`Points: ${points};
+    }
+
+     resultDiv.innerHTML = `Points: ${points}`;
+}
+
+</script>
+</html>
